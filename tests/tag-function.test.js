@@ -4,11 +4,11 @@ function tagFunction(array, ...args) {
 }
 
 test("tag function", () => {
-  const name = "yuli";
+  const firstName = "yuli";
   const lastName = "anto";
 
-  tagFunction`Hello ${name} ${lastName}!, How are you`;
-  tagFunction`Bye ${name} ${lastName}!, see you later`;
+  tagFunction`Hello ${firstName} ${lastName}!, How are you`;
+  tagFunction`Bye ${firstName} ${lastName}!, see you later`;
 });
 
 test("tag function sql", () => {

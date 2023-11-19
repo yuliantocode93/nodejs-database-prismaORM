@@ -24,6 +24,8 @@ describe("Prisma Client", () => {
     expect(kwon.name).toBe("Kwon");
     expect(yuli.name).toBe("Yuli");
   });
+
+  // Interactive Transaction
   it("should can execute interactive transaction", async () => {
     const [kwon, yuli] = await prismaClient.$transaction(async (prisma) => {
       const kwon = await prisma.customer.create({
@@ -42,6 +44,7 @@ describe("Prisma Client", () => {
           phone: "08123456781",
         },
       });
+
       return [kwon, yuli];
     });
 

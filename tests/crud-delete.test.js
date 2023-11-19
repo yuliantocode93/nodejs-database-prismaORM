@@ -1,12 +1,8 @@
 import { prismaClient } from "../src/prisma-client";
 
 describe("Prisma Client", () => {
-  it("should be able to create customer", async () => {
-    const customer = await prismaClient.customer.update({
-      data: {
-        name: "Yuli saja",
-        email: "yulisaja@gmail.com",
-      },
+  it("should be able to delete customer", async () => {
+    const customer = await prismaClient.customer.delete({
       where: {
         id: "1",
       },
