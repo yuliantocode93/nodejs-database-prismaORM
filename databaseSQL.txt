@@ -1,4 +1,4 @@
-#INPUT Data di Databases 
+#INPUT Data di Databases MySQL
 
 create database nodejs_database_part_1;
 
@@ -36,7 +36,6 @@ category varchar(100) not null,
 primary key (id)
 ) engine innodb;
 
-/////////////////////////////////////////////////////////////////
 
 insert into products(id, name, price, stock, category)
 value ('P0001', 'A', 1000, 100, 'K1'),
@@ -46,8 +45,6 @@ value ('P0001', 'A', 1000, 100, 'K1'),
 ('P0005', 'E', 5000, 500, 'K1');
 
 SELECT * FROM products;
-
-/////////////////////////////////////////////////////////////////////
 
 
 insert into products(id, name, price, stock, category)
@@ -82,3 +79,20 @@ create table wallet
 
 
 ///////////////////////////////////////////////////////////////////////
+
+create table comments(
+    id int not null auto_increment,
+    customer_id varchar(100) not null,
+    title varchar(100) not null,
+    description text,
+    primary key (id),
+    constraint comments_customer_id_fk foreign key (customer_id) references customers(id)
+) engine innodb;
+
+insert into comments(customer_id, title, description)
+values  ("yuli", "comment 1", "sample comment 1"),
+        ("yuli", "comment 2", "sample comment 2"),
+        ("yulianto", "comment 1", "sample comment 1"),
+        ("yulianto", "comment 2", "sample comment 2");
+
+//////////////////////////////////////////////////////////////////////

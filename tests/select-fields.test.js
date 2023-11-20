@@ -11,13 +11,13 @@ describe("Prisma Client", () => {
     await prisma.$disconnect();
   });
 
-  it("should be able to create and select fields", async () => {
+  it("should can create and select fields", async () => {
     const customer = await prisma.customer.create({
       data: {
-        id: "rully",
-        email: "rully@gmail.com",
-        phone: "12345678910",
-        name: "Rully Nugraha",
+        id: "yully",
+        email: "yully@gmail.com",
+        phone: "09888677665",
+        name: "yullyanto",
       },
       select: {
         id: true,
@@ -25,8 +25,8 @@ describe("Prisma Client", () => {
       },
     });
 
-    expect(customer.id).toBe("rully");
-    expect(customer.name).toBe("Rully Nugraha");
+    expect(customer.id).toBe("yully");
+    expect(customer.name).toBe("yullyanto");
     expect(customer.email).toBeUndefined();
     expect(customer.phone).toBeUndefined();
   });

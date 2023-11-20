@@ -14,8 +14,8 @@ describe("Prisma Client", function () {
   it("should create a one-to-one relation", async () => {
     const wallet = await prisma.wallet.create({
       data: {
-        id: "yuli",
-        customer_id: "yuli",
+        id: "echo1",
+        customer_id: "echo1",
         balance: 1000000,
       },
       include: {
@@ -23,6 +23,6 @@ describe("Prisma Client", function () {
       },
     });
 
-    console.log(wallet);
+    console.info(wallet);
   });
 });

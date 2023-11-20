@@ -1,24 +1,3 @@
-// const { PrismaClient } = require("@prisma/client");
-
-// describe("Prisma Client", () => {
-//   it("should can do sorting", async () => {
-//     const cumtomers = await PrismaClient.cumtomer.findMany({
-//       skip: 0,
-//       take: 10,
-//       orderBy: [
-//         {
-//           name: "desc",
-//         },
-//         {
-//           email: "asc",
-//         },
-//       ],
-//     });
-
-//     console.log(cumtomers);
-//   });
-// });
-
 const { PrismaClient } = require("@prisma/client");
 
 describe("Prisma Client", () => {
