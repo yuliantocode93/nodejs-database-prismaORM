@@ -96,3 +96,33 @@ values  ("yuli", "comment 1", "sample comment 1"),
         ("yulianto", "comment 2", "sample comment 2");
 
 //////////////////////////////////////////////////////////////////////
+
+
+create table likes 
+(
+    customer_id varchar(100) not null,
+    product_id varchar(100) not null,
+    primary key (customer_id, product_id),
+    constraint likes_customer_id_fk foreign key (customer_id) references customers (id),
+    constraint likes_product_id_fk foreign key (product_id) references products (id)
+) engine innodb;
+
+///////////////////////////////////////////////////////////////////////////
+
+create table _loves 
+(
+    A varchar(100) not null,
+    B varchar(100) not null,
+    primary key (A, B),
+    constraint customer_loves_fk foreign key (A) references customers (id),
+    constraint product_loves_fk foreign key (B) references products (id)
+) engine innodb;
+
+/////////////////////////////////////////////////////////////////////////////
+
+create database nodejs_prisma;
+
+desc sample;
+
+alter table sample
+add column full_description text;
